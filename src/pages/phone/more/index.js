@@ -7,7 +7,7 @@ import {saveLoginState} from '../../../redux/actions/user';
 // import TouchID from 'react-native-touch-id';
 import {aboutUsBlock} from './components/aboutUsBlock';
 import {BackButton} from '../../components/backButton';
-import {PoppinsSemiBold} from '../../../../assets/styles';
+import {PoppinsSemiBold, RobotoBold} from '../../../../assets/styles';
 import {AppHeader} from '../../components/appHeader';
 import {MAIN_COLOUR} from '../../../system/constants';
 
@@ -54,7 +54,7 @@ class MoreIndexScreen extends Component {
             return (
                 <View style={styles.row}>
                     <View style={styles.iconWrapper}>
-                        <Icon name='fingerprint' style={styles.icon}/>
+                        <Icon name="fingerprint" style={styles.icon}/>
                     </View>
                     <View style={{flex: 1}}>
                         <Text>FaceID / TouchId</Text>
@@ -79,7 +79,7 @@ class MoreIndexScreen extends Component {
     render() {
         return (
             <View style={{flex: 1}}>
-                <AppHeader />
+                <AppHeader/>
                 <ScrollView style={{}} showsVerticalScrollIndicator={false}>
                     <View style={{flex: 1, alignSelf: 'stretch', marginVertical: 24}}>
 
@@ -92,7 +92,7 @@ class MoreIndexScreen extends Component {
 
                                 <View style={styles.row}>
                                     <View style={styles.iconWrapper}>
-                                        <Icon name='envelope' style={styles.icon}/>
+                                        <Icon name="envelope" style={styles.icon}/>
                                     </View>
                                     <View style={{flex: 1}}>
                                         <TouchableOpacity onPress={() => {
@@ -104,7 +104,7 @@ class MoreIndexScreen extends Component {
                                 </View>
                                 <View style={styles.row}>
                                     <View style={styles.iconWrapper}>
-                                        <Icon name='comment-dots' style={styles.icon}/>
+                                        <Icon name="comment-dots" style={styles.icon}/>
                                     </View>
                                     <View style={{flex: 1}}>
                                         <TouchableOpacity
@@ -119,7 +119,7 @@ class MoreIndexScreen extends Component {
                                 </View>
                                 <View style={styles.rowBorderless}>
                                     <View style={styles.iconWrapper}>
-                                        <Icon name='headset' style={styles.icon}/>
+                                        <Icon name="headset" style={styles.icon}/>
                                     </View>
                                     <View style={{flex: 1}}>
                                         <TouchableOpacity
@@ -146,7 +146,7 @@ class MoreIndexScreen extends Component {
                                                 Linking.openURL('https://www.facebook.com/InParkToday/');
                                             }}
                                         >
-                                            <Icon name='facebook' style={[styles.socialIcon, {color: '#1877f2'}]}/>
+                                            <Icon name="facebook" style={[styles.socialIcon, {color: '#1877f2'}]}/>
                                         </TouchableOpacity>
                                     </View>
                                     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
@@ -155,7 +155,7 @@ class MoreIndexScreen extends Component {
                                                 Linking.openURL('https://www.instagram.com/appbeautysecrets/');
                                             }}
                                         >
-                                            <Icon name='instagram' style={[styles.socialIcon, {color: '#8a3ab9'}]}/>
+                                            <Icon name="instagram" style={[styles.socialIcon, {color: '#8a3ab9'}]}/>
                                         </TouchableOpacity>
                                     </View>
                                     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
@@ -164,7 +164,7 @@ class MoreIndexScreen extends Component {
                                                 Linking.openURL('https://twitter.com/InParkToday');
                                             }}
                                         >
-                                            <Icon name='twitter' style={[styles.socialIcon, {color: '#00acee'}]}/>
+                                            <Icon name="twitter" style={[styles.socialIcon, {color: '#00acee'}]}/>
                                         </TouchableOpacity>
                                     </View>
                                     {/*<View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>*/}
@@ -186,7 +186,7 @@ class MoreIndexScreen extends Component {
 
                             <View style={styles.row}>
                                 <View style={styles.iconWrapper}>
-                                    <Icon name='bell' style={styles.icon}/>
+                                    <Icon name="bell" style={styles.icon}/>
                                 </View>
                                 <View style={{flex: 1}}>
                                     <Text>Push Notifications</Text>
@@ -209,7 +209,7 @@ class MoreIndexScreen extends Component {
                             </View>
                             <View style={styles.rowBorderless}>
                                 <View style={styles.iconWrapper}>
-                                    <Icon name='mail-bulk' style={styles.icon}/>
+                                    <Icon name="mail-bulk" style={styles.icon}/>
                                 </View>
                                 <View style={{flex: 1}}>
                                     <Text>Newsletters</Text>
@@ -233,13 +233,25 @@ class MoreIndexScreen extends Component {
                         </View>
                     </View>
 
-                    <View>
+                    <View style={{marginVertical: 16}}>
                         <Text style={styles.infoText}>
                             1.0.0
                         </Text>
                         <Text style={styles.infoText}>
-                            @{date.getFullYear()} InPark Today
+                            @{date.getFullYear()} InPark Today.
                         </Text>
+                        <View style={{alignItems: 'center', justifyContent: 'center'}}>
+                            <Text style={styles.infoText}>
+                                developed by
+                            </Text>
+                            <TouchableOpacity style={{marginVertical: 4}}
+                                              onPress={() => {
+                                                  Linking.openURL('https://siantech.net');
+                                              }}
+                            >
+                                <Image source={require('../../../../assets/images/logo-siantech.png')} style={{height: 50, width: 150}} />
+                            </TouchableOpacity>
+                        </View>
                     </View>
                 </ScrollView>
             </View>
@@ -249,10 +261,10 @@ class MoreIndexScreen extends Component {
 
 const styles = StyleSheet.create({
     row: {
-        flexDirection: 'row', height: 40, alignItems: 'center', borderBottomWidth: 1, borderBottomColor: '#CCC'
+        flexDirection: 'row', height: 40, alignItems: 'center', borderBottomWidth: 1, borderBottomColor: '#CCC',
     },
     rowBorderless: {
-        flexDirection: 'row', height: 40, alignItems: 'center'
+        flexDirection: 'row', height: 40, alignItems: 'center',
     },
     title: {
         color: '#999',
@@ -272,6 +284,13 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 12,
         alignSelf: 'center',
+    },
+    buttonText: {
+        color: MAIN_COLOUR,
+        fontWeight: 'bold',
+        fontSize: 12,
+        alignSelf: 'center',
+        fontFamily: RobotoBold,
     },
     iconWrapper: {
         width: 30,

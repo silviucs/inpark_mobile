@@ -41,7 +41,7 @@ export const UserAvatar = (props) => {
             <View style={{marginHorizontal: 8, alignItems: 'flex-end'}}>
                 <Avatar
                     rounded
-                    containerStyle={{backgroundColor: 'white'}}
+                    containerStyle={{backgroundColor: 'white', borderColor: SECONDARY_COLOUR, borderWidth: 2}}
                     // icon={{name: 'user', type: 'font-awesome'}}
                     size={(props.size ? props.size : 'medium')}
                     source={{uri: user.avatar}}

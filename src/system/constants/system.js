@@ -10,7 +10,8 @@ export const ENDPOINT_SEARCH_GEOCODING = 'location/search';
 
 export const MAIN_COLOUR = '#a2ce02'
 export const SECONDARY_COLOUR = '#518e42'
-export const DANGER_COLOUR = '#E62937'
+export const DANGER_COLOUR = '#F84F4F'
+export const GREY_COLOUR = '#3D423C'
 export const INACTIVE_COLOUR = '#BCBCBC'
 
 export const ONESIGNAL_APP_ID = "adba7b0a-8278-46ea-9262-68b9604186ff";
